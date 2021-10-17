@@ -166,8 +166,140 @@ div {
 	 margin: 3px 0;
  }
 .nav-items {
-	 flex:1;
- }
+    /* 不冲突的 */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.nav-items a {
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    color: #fff;
+    font-size: 14px;
+    /* 文字阴影 */
+    text-shadow: 1px 1px rgba(0, 0, 0, .2);
+}
+
+.nav-items a:nth-child(1) {
+    border-bottom: 1px solid #fff;
+}
+
+.nav-items:nth-child(1) a {
+    border: 0;
+    background: url(../images/hotel.png) no-repeat bottom center;
+    background-size: 121px auto;
+}
+
+/* -n+2就是选择前面两个元素 */
+
 .nav-items:nth-child(-n+2) {
-	 border-right: 1px solid #fff;
- }
+    border-right: 3px solid #fff;
+}
+
+.nav-common:nth-child(1) {
+	background: -webkit-linear-gradient(left, #FA5A55, #FA994D);
+}
+
+.nav-common:nth-child(2) {
+	background: -webkit-linear-gradient(left, #4B90ED, #53BCED);
+}
+
+.nav-common:nth-child(3) {
+	background: -webkit-linear-gradient(left, #34C2A9, #6CD559);
+}
+
+.subnav-entry {
+	display: flex;
+	border-radius: 8px;
+	background-color: #fff;
+	margin: 0 4px;
+	flex-wrap: wrap;
+	padding: 5px 0;
+}
+.subnav-entry li {
+	flex:20%;
+}
+
+.subnav-entry a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.subnav-entry-icon {
+	width: 28px;
+	height: 28px;
+	margin-top: 4px;
+	background: url(../images/subnav-bg.png) no-repeat;
+	background-size:28px auto
+}
+
+/* sales-box */
+
+.sales-box {
+	border-top: 1px solid #bbb;
+	background-color: #fff;
+	margin: 4px;
+}
+
+.sales-hd {
+	position: relative;
+	height: 44px;
+	border-bottom: 1px solid #ccc;
+}
+
+.sales-hd h2 {
+	position: relative;
+	text-indent: -999px;
+	overflow: hidden;
+}
+
+.sales-hd h2::after {
+	position: absolute;
+	top: 8px;
+	left: 20px;
+	content: "";
+	width: 79px;
+	height: 15px;
+	background: url(../images/hot.png) no-repeat 0 -20px;
+	background-size: 79px auto;
+}
+
+.more {
+	position: absolute;
+	right: 5px;
+	top: 0px;
+	background: -webkit-linear-gradient(left,#ff4f68,#ff6ac4);
+	border-radius: 15px;
+	padding: 3px 20px 3px 10px;
+	color: #fff;
+} 
+
+.more::after {
+	content: "";
+	position: absolute;
+	top: 10px;
+	right: 13px;
+	width: 7px;
+	height: 7px;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+	transform: rotate(45deg);
+}
+
+.row {
+	display: flex;
+}
+
+.row a {
+	flex: 1;
+	border-bottom: 1px solid #ccc;
+}
+.row a:nth-child(1) {
+	border-right: 1px solid #ccc;
+}
+
+.row a img {
+	width: 100%;
+}
